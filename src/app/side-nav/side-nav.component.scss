@@ -1,0 +1,63 @@
+$color-primary: #ff7f5c;
+$color-secondary: #3d5161;
+$bg-color: #f9f5f3;
+$hover-color: #fff5;
+
+.side-nav {
+  height: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    width: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.785rem;
+    padding-bottom: 0.785rem;
+  }
+  .all-links {
+    height: 15.4rem;
+    width: 4.5rem;
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.785rem;
+    padding-bottom: 0.785rem;
+    width: 100%;
+    opacity: 0.6;
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: rgb(0, 13, 255);
+    }
+
+    &:hover {
+      background-color: $hover-color;
+      border-left: 5px solid #fff9;
+      cursor: pointer;
+    }
+  }
+  app-logout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.785rem;
+    padding-bottom: 0.785rem;
+    width: 100%;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .active {
+    opacity: 1;
+    border-left: 5px solid #fff9;
+  }
+}

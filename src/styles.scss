@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+// Angular Material DatePiker
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// Define your custom color variables
+$custom-primary: mat.define-palette(mat.$indigo-palette);
+$custom-accent: mat.define-palette(mat.$pink-palette);
+$custom-warn: mat.define-palette(mat.$red-palette);
+
+// Create the custom theme
+$custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $custom-primary,
+      accent: $custom-accent,
+      warn: $custom-warn,
+    ),
+  )
+);
+
+// Include the custom theme
+@include mat.all-component-themes($custom-theme);
+// Angular Material DatePiker
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito+Sans:opsz,wght@6..12,700&family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+  color: #3d5161 !important;
+  background-color: #f9f5f3 !important;
+}
+
+// /* This will apply to all scrollbars */
+// ::-webkit-scrollbar {
+//   width: 0.3rem; /* Adjust scrollbar width */
+// }
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: #3d5161; /* Track color */
+// }
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   background: #f9f5f3; /* Handle color */
+//   border-radius: 0.23rem;
+// }
+
+::selection {
+  color: #fff;
+  background: #ff7f5c; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  color: #fff;
+  background: #ff7f5c; /* Gecko Browsers */
+}
+::-ms-selection {
+  color: #fff;
+  background: #ff7f5c; /* IE 10+ */
+}
+
+// .mdc-text-field--outlined {
+//   --mdc-outlined-text-field-container-shape: 28px !important;
+// }
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled,
+::ng-deep .mat-form-field-outline {
+  opacity: 0 !important;
+}

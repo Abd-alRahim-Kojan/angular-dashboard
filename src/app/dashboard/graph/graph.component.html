@@ -1,0 +1,25 @@
+<div class="chart-container">
+  <div class="chart-header">
+    <div class="chart-title">STATIONS ACTIVATES OVERVIEW</div>
+    <div class="chart-options">
+      <div class="option"><span class="active">SALES</span></div>
+      <div class="option"><span>TRANSACTION</span></div>
+      <div class="option"><span>VALUE</span></div>
+      <div class="option"><span>COMPRESSION</span></div>
+    </div>
+  </div>
+
+  <div class="chart-body">
+    <div style="text-align: center">
+      <apx-chart
+        [series]="chartOptions.series!"
+        [chart]="chartOptions.chart!"
+        [xaxis]="chartOptions.xaxis!"
+        [yaxis]="chartOptions.yaxis!"
+        [plotOptions]="chartOptions.plotOptions!"
+        [dataLabels]="chartOptions.dataLabels!"
+        [colors]="chartOptions.colors!"
+      ></apx-chart>
+    </div>
+  </div>
+</div>

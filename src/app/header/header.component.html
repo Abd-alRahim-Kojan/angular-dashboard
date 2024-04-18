@@ -1,0 +1,45 @@
+<nav>
+  <div class="info">
+    <div class="station">
+      <img
+        src="../../assets/icons/gas-station-svgrepo-com - second-color.svg"
+        alt=""
+      />
+      <span class="text-larg">2/3</span>
+      <span class="text-small">Monitored<br />Stations</span>
+    </div>
+    <div class="update">
+      <img src="../../assets/icons/circular-arrow-svgrepo-com.svg" alt="" />
+      <span class="text-larg">20s</span>
+      <span class="text-small">Last<br />Update</span>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="period-options">
+      <button>Today</button>
+      <button>Yesterday</button>
+      <button>Last Week</button>
+    </div>
+  </div>
+
+  <div class="date">
+    <form action="">
+      <mat-form-field class="start-date-field">
+        <mat-label><span>Start</span> date - time</mat-label>
+        <input matInput [matDatepicker]="startDatePicker" />
+        <mat-datepicker-toggle matSuffix [for]="startDatePicker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #startDatePicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="end-date-field">
+        <mat-label><span>End</span> date - time</mat-label>
+        <input matInput [matDatepicker]="pauseDatePicker" />
+        <mat-datepicker-toggle matSuffix [for]="pauseDatePicker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #pauseDatePicker></mat-datepicker>
+      </mat-form-field>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,202 @@
+$color-primary: #ff7f5c;
+$color-secondary: #3d5161;
+$bg-color: #f9f5f3;
+$hover-color: #f4dbd4;
+
+.container {
+  padding-top: 2rem;
+}
+.padding {
+  padding-left: 8rem;
+}
+
+.card {
+  width: 95%;
+  border-radius: 1rem;
+  border-style: none;
+  padding: 0.1rem 1rem;
+  line-height: 0.6;
+  &.highlight {
+    background-color: $hover-color;
+  }
+  .card-body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: $color-secondary;
+    .card-title {
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 0;
+    }
+    .unit {
+      font-size: 0.9rem;
+    }
+    .mini-unit {
+      font-size: 0.6rem;
+      display: inline-block;
+      transform: translateY(-0.625rem);
+    }
+    .card-text {
+      font-size: 0.9rem;
+      line-height: 1rem;
+      margin-bottom: 0.625rem;
+      font-family: Montserrat;
+      font-weight: 700;
+    }
+    .card-ratio {
+      font-size: 0.9rem;
+      padding-top: 0.5rem;
+    }
+    .up {
+      display: inline-block;
+      width: 0.59rem;
+      height: 0.35rem;
+      margin-right: 0.35rem;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 0;
+      border-left-width: 0.29rem;
+      border-right-width: 0.29rem;
+      border-bottom-width: 0.35rem;
+      border-bottom-color: #00cbc0;
+    }
+    .down {
+      display: inline-block;
+      width: 0.59rem;
+      height: 0.35rem;
+      margin-right: 0.35rem;
+      border-color: transparent;
+      border-style: solid;
+      border-width: 0;
+      border-left-width: 0.29rem;
+      border-right-width: 0.29rem;
+      border-top-width: 0.35rem;
+      border-top-color: $color-primary;
+    }
+  }
+}
+
+.title {
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  color: $color-secondary;
+  margin-bottom: 2.4rem;
+}
+
+.graph-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  .details-options {
+    display: flex;
+    gap: 1rem;
+    width: 14.5rem;
+    border-radius: 1.17rem;
+    text-align: center;
+    background-color: white;
+    a {
+      color: $color-secondary;
+      font-family: Montserrat;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.75rem;
+      height: 2.2rem;
+      line-height: 1.3rem;
+      padding-top: 0.43rem;
+      padding-bottom: 0.43rem;
+      width: 7rem;
+      border-radius: 1.17rem;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        &:not(.active) {
+          color: $color-secondary;
+          background-color: $hover-color;
+        }
+      }
+      &.active {
+        background-color: $color-primary;
+        color: white;
+        font-weight: bold;
+        cursor: default;
+      }
+    }
+  }
+}
+
+.charts {
+  height: 400px;
+  margin-top: 1rem;
+  padding: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+/* This will apply to all scrollbars */
+::-webkit-scrollbar {
+  width: 0.3rem; /* Adjust scrollbar width */
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: $hover-color; /* Track color */
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-primary; /* Handle color */
+  border-radius: 0.23rem;
+}
+
+.sb-station {
+  margin: 2rem 0;
+}
+
+.stations {
+  display: grid;
+  width: 297px;
+  margin: auto auto 47px;
+  gap: 47px;
+  color: #3d5161;
+  .station {
+    .station-details {
+      display: grid;
+      grid-template-columns: 50px 1fr 120px;
+      margin-bottom: 15px;
+      text-align: left;
+      img {
+        width: 38px;
+        height: 32px;
+      }
+      .station-name {
+        font-family: Montserrat;
+        font-size: 16px;
+        height: 32px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-weight: 700;
+      }
+      .station-sales {
+        font-family: Nunito Sans;
+        font-weight: 700;
+        font-size: 22px;
+        height: 22px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: right;
+        sub {
+          font-size: 15px;
+          top: -0.5rem;
+        }
+      }
+    }
+    .progress-holder {
+      background-color: #f4dbd4;
+      height: 6px;
+      border-radius: 20px;
+      .progress {
+        height: 6px;
+        border-radius: 20px;
+        background-color: #ff7f5c;
+      }
+    }
+  }
+}

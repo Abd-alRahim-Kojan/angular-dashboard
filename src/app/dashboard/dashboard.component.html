@@ -1,0 +1,126 @@
+<div class="container-fluid padding">
+  <div class="row">
+    <div class="col-md-6 col-lg-8 col-xl-9">
+      <div class="row">
+        <div class="container">
+          <div class="dashboard-cards">
+            <div class="row gx-2">
+              <div
+                class="col-lg-6 col-xl-3"
+                *ngFor="let card of cards; let first = first"
+              >
+                <div class="card" [ngClass]="{ highlight: first }">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      {{ card.title }}
+                      <span class="unit">{{ card.unit }}</span>
+                      <span class="mini-unit">{{ card.miniUnit }}</span>
+                    </h5>
+                    <p class="card-text">{{ card.label }}</p>
+                    <!-- <span class="arrow" [ngClass]="card.arrow"></span> -->
+                    <p
+                      class="card-ratio"
+                      [ngStyle]="{
+                        color: card.arrow === 'up' ? '#00CBC0' : '#ff7f5c'
+                      }"
+                    >
+                      <span [ngClass]="card.arrow"></span>
+                      {{ card.num }}
+                      <span class="unit">{{ card.unit2 }}</span>
+                      <span class="mini-unit"> {{ card.miniUnit2 }}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container graph-buttons">
+          <div class="details-options">
+            <a routerLink="graph" routerLinkActive="active">
+              <fa-icon [icon]="faChartSimple"></fa-icon>
+              Graph
+            </a>
+            <a routerLink="list" routerLinkActive="active">
+              <fa-icon [icon]="faListUl"></fa-icon>
+              List</a
+            >
+          </div>
+        </div>
+
+        <div class="container charts">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="container">
+        <div class="title">Hourly Sales</div>
+        <div class="radar-chart">
+          <app-radar-chart></app-radar-chart>
+        </div>
+
+        <div class="title sb-station">Sales by Station</div>
+
+        <div class="stations">
+          <div class="station">
+            <div class="station-details">
+              <img
+                src="../../assets/icons/gas-station-svgrepo-com - second-color.svg"
+                alt="logo"
+              />
+              <div class="station-name">Station Name</div>
+              <div class="station-sales">
+                62,721m
+                <sub>3</sub>
+              </div>
+            </div>
+            <div class="progress-holder">
+              <div class="progress" style="width: 45%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stations">
+          <div class="station">
+            <div class="station-details">
+              <img
+                src="../../assets/icons/gas-station-svgrepo-com - second-color.svg"
+                alt="logo"
+              />
+              <div class="station-name">Station Name</div>
+              <div class="station-sales">
+                62,721m
+                <sub>3</sub>
+              </div>
+            </div>
+            <div class="progress-holder">
+              <div class="progress" style="width: 45%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stations">
+          <div class="station">
+            <div class="station-details">
+              <img
+                src="../../assets/icons/gas-station-svgrepo-com - second-color.svg"
+                alt="logo"
+              />
+              <div class="station-name">Station Name</div>
+              <div class="station-sales" style="color: #b9cde2">
+                NM
+                <sub></sub>
+              </div>
+            </div>
+            <div class="progress-holder">
+              <div class="progress" style="background-color: #b9cde2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

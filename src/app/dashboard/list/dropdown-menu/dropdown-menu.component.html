@@ -1,0 +1,16 @@
+<div class="options-dialog">
+  <div class="dialog-title">View Properties:</div>
+  <div class="dialog-body">
+    <span *ngFor="let item of checkboxItems">
+      <input
+        type="checkbox"
+        class="checkbox-flip"
+        id="{{ item.id }}"
+        [(ngModel)]="item.checked"
+      />
+      <label class="option" for="{{ item.id }}"
+        ><span></span>{{ item.label }}</label
+      >
+    </span>
+  </div>
+</div>

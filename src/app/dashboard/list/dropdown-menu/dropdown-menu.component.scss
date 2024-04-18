@@ -1,0 +1,72 @@
+.options-dialog {
+  position: absolute;
+  // display: none;
+  top: calc(100% - 0.75rem);
+  right: calc(100% - 0.75rem);
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 1px 2px 4px #999;
+  width: 35rem;
+  z-index: 1;
+  z-index: 1;
+  .dialog-title {
+    margin: 1rem;
+    font-family: Nunito Sans;
+    font-size: 0.75rem;
+    color: #3d5161;
+    border-bottom: 0.1rem solid #e0e7f1;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-weight: 700;
+  }
+  .dialog-body {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    font-family: Nunito Sans;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    font-weight: 700;
+    color: #3d5161;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .checkbox-flip {
+      display: none;
+    }
+    .option {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      span {
+        display: inline-block;
+        width: 25px;
+        height: 19px;
+        margin: 0 5px -4px 0;
+        &::before {
+          border-radius: 25%;
+          content: "";
+          position: absolute;
+          z-index: 1;
+          width: 1rem;
+          height: 1rem;
+          background: transparent;
+          border: 2px solid #ff7f5c;
+        }
+        &::after {
+          border-radius: 25%;
+          content: "";
+          position: absolute;
+          z-index: 0;
+          width: 1rem;
+          height: 1rem;
+          background: transparent;
+          border: none;
+        }
+      }
+    }
+    .checkbox-flip:checked + label {
+      span::after {
+        background: #ff7f5c;
+      }
+    }
+  }
+}

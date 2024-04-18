@@ -1,0 +1,101 @@
+$color-primary: #ff7f5c;
+$color-secondary: #3d5161;
+$bg-color: #f9f5f3;
+$hover-color: #f4dbd4;
+
+.companies-details {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  .company-details {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    .company-header {
+      border-bottom: 0.1rem solid #e0e7f1;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      .dot-icon-container {
+        display: inline-block;
+        position: relative;
+        width: 0.7rem;
+        height: 1.75rem;
+        .dot-icon {
+          display: inline-block;
+          height: 0.4rem;
+          width: 0.4rem;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #ff7f5c;
+          border-radius: 50%;
+        }
+      }
+      img {
+        vertical-align: top;
+        margin-left: 0.5rem;
+        height: 1.75rem;
+      }
+      .company-title {
+        margin-left: 0.5rem;
+        display: inline-block;
+        font-family: Montserrat;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 1.8px;
+        color: $color-secondary;
+      }
+      .toggle-options {
+        float: right;
+        padding: 0.25rem 0.5rem;
+        border-radius: 25%;
+        position: relative;
+        &:hover {
+          cursor: pointer;
+          background-color: #f9f5f3;
+        }
+        .list-dropdown-toggle {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .company-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding-top: 1rem;
+      .details-item {
+        padding: 0.5rem;
+        font-family: Montserrat;
+        font-size: 0.75rem;
+        color: $color-secondary;
+        display: flex;
+        justify-content: space-between;
+        .item-name {
+          font-weight: 700;
+        }
+        .item-value {
+          font-weight: 500;
+          font-size: 0.8rem;
+          span {
+            position: relative;
+            line-height: 0;
+            vertical-align: baseline;
+            font-size: 0.7rem;
+
+            &.unit {
+              margin-left: 0.25rem;
+              bottom: -0.25em;
+            }
+            &.mini-unit {
+              font-size: 0.55rem;
+              display: inline-block;
+              transform: translateY(-0.4rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}

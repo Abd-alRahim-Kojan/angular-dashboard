@@ -1,0 +1,32 @@
+<div class="companies-details" *ngFor="let company of companies">
+  <div class="company-details">
+    <div class="company-header">
+      <span class="dot-icon-container">
+        <span class="dot-icon"></span>
+      </span>
+      <img src="../../../assets/icons/gas-station-svgrepo-com.svg" alt="logo" />
+      <div class="company-title">{{ company.name }}</div>
+      <span class="toggle-options" (click)="toggleDropdown(company)">
+        <span class="list-dropdown-toggle">
+          <fa-icon [icon]="faEllipsis"></fa-icon>
+        </span>
+        <span *ngIf="company.dropdownOpen">
+          <app-dropdown-menu></app-dropdown-menu>
+        </span>
+      </span>
+    </div>
+
+    <div class="company-body">
+      <div class="details-item" *ngFor="let item of company.items">
+        <div class="item-name">
+          {{ item.name }}
+        </div>
+        <div class="item-value">
+          {{ item.value }}
+          <span class="unit">{{ item.unit }}</span>
+          <span class="mini-unit">{{ item.miniUnit }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
